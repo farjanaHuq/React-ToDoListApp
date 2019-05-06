@@ -2,22 +2,39 @@ import React, { Component } from 'react';
 // import { Flex, Item } from 'react-flex';
 
 export class AddToDo extends Component {
+  state = {
+      title: ''
+  }
+
+  onChange = (e) => {
+      this.setState({
+          [e.target.name]: e.target.value
+      })
+  }
+
+  onSubmit = (e) => {
+ 
+      e.preventDefault();
+      this.props.addToDo(this.state.title);
+      this.setState({title: ''})
+  }
   render() {
     return (
-      <form style={formStyle}>
+      <form onSubmit={this.onSubmit} style={formStyle}>
           <input 
           type ='text' 
           name='title' 
-      
           style={{flex:'10', padding: '5px'}}
           placeholder='Add To do...'
-
+          value={this.state.title}
+          onChange={this.onChange}
           />
          <input 
            type="submit" 
            value="Submit" 
            class="btn"
            style={{flex:'1'}}
+
            />
 
       </form>
