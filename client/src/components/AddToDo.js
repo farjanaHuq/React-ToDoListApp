@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 // import { Flex, Item } from 'react-flex';
 
 export class AddToDo extends Component {
