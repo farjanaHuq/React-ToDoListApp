@@ -7,8 +7,18 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/ToDos");
 
 const toDoSeed = [
-  
-   
+  {  
+    title: 'take out trash',
+    completed: false
+  },
+  { 
+   title: 'wash clothes',
+   completed: true
+ },
+ {  
+   title: 'learn react',
+   completed: false
+ }
 ] 
 
 db.Todo
